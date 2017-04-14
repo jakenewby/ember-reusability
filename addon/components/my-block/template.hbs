@@ -1,0 +1,18 @@
+{{#if hasBlock}}
+  {{!-- enumerate the things you want to allow to be rendered --}}
+  {{yield places.indy places.raleigh places.dubai places.london places.dalyCity}}
+{{else}}
+  people:
+  <ul>
+    {{#each people as |person|}}
+      <li>{{person}}</li>
+    {{/each}}
+  </ul>
+
+  places:
+  <ul>
+    {{#each places as |place|}}
+      <li>{{place}}</li>
+    {{/each}}
+  </ul>
+{{/if}}

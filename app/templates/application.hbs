@@ -1,0 +1,30 @@
+<h1>Block Definition - Dynamic properties 'people' attribute object</h1>
+<h3>Example 1</h3>
+'places' attribute does not contain dalyCity
+{{#my-block people=model places=myPlaces as |indy raleigh dubai london dalyCity|}} {{!-- does not contain dalyCity --}}
+  <ul>
+    <li style="color: blue;">{{indy}}</li>
+    <li style="color: purple;">{{raleigh}}</li>
+    <li style="color: red;">{{dubai}}</li>
+    <li style="color: fuschia;">{{london}}</li>
+  </ul>
+{{/my-block}}
+
+<h3>Example 2</h3>
+'places' attribute does not contain dubai or london
+{{#my-block people=model places=yourPlaces as |indy raleigh dubai london dalyCity|}} {{!-- does not contain dubai or london --}}
+  <ul>
+    <li style="color: blue;">{{indy}}</li>
+    <li style="color: purple;">{{raleigh}}</li>
+    <li style="color: orange;">{{dalyCity}}</li>
+  </ul>
+{{/my-block}}
+
+<hr/>
+
+<h1>Inline Definition - Properties are static</h1>
+<h3>Example 1</h3>
+{{my-block people=model places=myPlaces}}
+
+<h3>Example 2</h3>
+{{my-block people=model places=yourPlaces}}
